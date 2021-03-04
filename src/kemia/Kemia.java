@@ -37,30 +37,38 @@ public class Kemia {
         do {
             System.out.println("Kérek egy vegyjelet!");
             vjel = be.next();
-            
-           // System.out.println(vjel);
-
-     
-    
-        char first =vjel.charAt(0);
-        char last = vjel.charAt(vjel.length()-1);
-        //System.out.println(first+":"+last);
-        String strFirst = "";
-        String strLast = "";
-            strFirst=String.valueOf(Character.toUpperCase(first));
-            if (vjel.length()>1) {
-            strLast=String.valueOf(Character.toLowerCase(last));
+            // System.out.println(vjel);
+            char first = vjel.charAt(0);
+            char last = vjel.charAt(vjel.length() - 1);
+            //System.out.println(first+":"+last);
+            String strFirst = "";
+            String strLast = "";
+            strFirst = String.valueOf(Character.toUpperCase(first));
+            if (vjel.length() > 1) {
+                strLast = String.valueOf(Character.toLowerCase(last));
             }
-            vjel=strFirst+strLast;
-       // System.out.println(vjel);
+            vjel = strFirst + strLast;
+            // System.out.println(vjel);
             if (vjel.matches("[a-zA-Z]{2}")) {
                 jo = true;
-            }else if (vjel.matches("[a-zA-Z]{1}")) {
+            } else if (vjel.matches("[a-zA-Z]{1}")) {
                 jo = true;
-            } 
-               
+            }
         } while (jo == false);
-       
+        //6. feladat
+        boolean megvan = false;
+        int index = 0;
+        while (megvan == false && index < elemek.size()) {
+            if (vjel.equals(elemek.get(index).getVegyjel())) {
+                megvan = true;
+                System.out.println(elemek.get(index).getElem());
+                System.out.println(elemek.get(index).getEv());
+            }
+            index++;
+        }
+        if (megvan == false) {
+            System.out.println("Nincs ilyen elem!");
+        }
 
     }
 
