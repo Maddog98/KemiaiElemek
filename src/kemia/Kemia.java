@@ -13,14 +13,21 @@ public class Kemia {
         Path path = Paths.get("felfedezesek.csv");
         List<String> sorok = Files.readAllLines(path);
         List<KemiaiElem> elemek = new ArrayList<>();
-        
+
         for (int i = 1; i < sorok.size(); i++) {
             elemek.add(new KemiaiElem(sorok.get(i)));
         }
-        
-        System.out.println("Elemek száma: "+elemek.size());
-        
-        
+
+        System.out.println("Elemek száma: " + elemek.size());
+
+        int darabOkor = 0;
+        for (KemiaiElem kemiaiElem : elemek) {
+            if (kemiaiElem.getEv().equals("Ókor")) {
+                darabOkor++;
+            }
+        }
+
+        System.out.println("az Ókorban felfedezett elemek száma:" + darabOkor);
     }
-    
+
 }
