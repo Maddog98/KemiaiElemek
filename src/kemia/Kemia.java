@@ -5,7 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Kemia {
@@ -78,7 +80,47 @@ public class Kemia {
             }
         }
         System.out.println(max+" év volt a leghosszabb időszak 2 elem felfedezése között.");
+        
+        System.out.println("8. feladat: Statisztika");
+//        int db=0;
+//        int j=10;
+//        for (int i=10;i<elemek.size();i++) {
+//            while(elemek.get(i).getEv().equals(elemek.get(j).getEv())){
+//                db++;
+//                j++;
+//                if(!(elemek.get(i).getEv().equals(elemek.get(j).getEv()))){
+//                    i=j;
+//                }
+//                if(db>3){
+//                    System.out.println(elemek.get(i).getEv()+": "+db+" db");
+//                }
+//            }
+//            db=0;
+//        }
 
+        HashMap<String, Integer> evSzam = new HashMap<>();
+        for (KemiaiElem kemiaiElem : elemek) {
+            String ev = kemiaiElem.getEv();
+            if (evSzam.containsKey(ev)) {
+                int ertek = evSzam.get(ev);
+                evSzam.put(ev, ++ertek);
+            } else {
+                evSzam.put(ev, 1);
+            }
+        }
+        System.out.println("8. feladat");
+        for (Map.Entry<String, Integer> entry : evSzam.entrySet()) {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            if (value >3) {
+                if (!key.equals("Ókor")) {
+                    System.out.printf("%10s: %1d \n", key, value);
+                }
+                
+            }
+             
+        }
+        
     }
 
 }
