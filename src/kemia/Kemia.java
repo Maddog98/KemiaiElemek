@@ -18,6 +18,7 @@ public class Kemia {
         for (int i = 1; i < sorok.size(); i++) {
             elemek.add(new KemiaiElem(sorok.get(i)));
         }
+        //Varga Balázs
 
         System.out.println("Elemek száma: " + elemek.size());
 
