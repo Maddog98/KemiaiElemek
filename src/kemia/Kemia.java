@@ -20,6 +20,7 @@ public class Kemia {
         for (int i = 1; i < sorok.size(); i++) {
             elemek.add(new KemiaiElem(sorok.get(i)));
         }
+        //Varga Balázs
 
         System.out.println("Elemek száma: " + elemek.size());
 
@@ -82,21 +83,6 @@ public class Kemia {
         System.out.println(max+" év volt a leghosszabb időszak 2 elem felfedezése között.");
         
         System.out.println("8. feladat: Statisztika");
-//        int db=0;
-//        int j=10;
-//        for (int i=10;i<elemek.size();i++) {
-//            while(elemek.get(i).getEv().equals(elemek.get(j).getEv())){
-//                db++;
-//                j++;
-//                if(!(elemek.get(i).getEv().equals(elemek.get(j).getEv()))){
-//                    i=j;
-//                }
-//                if(db>3){
-//                    System.out.println(elemek.get(i).getEv()+": "+db+" db");
-//                }
-//            }
-//            db=0;
-//        }
 
         HashMap<String, Integer> evSzam = new HashMap<>();
         for (KemiaiElem kemiaiElem : elemek) {
