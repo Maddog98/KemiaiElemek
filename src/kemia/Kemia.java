@@ -69,6 +69,15 @@ public class Kemia {
         if (megvan == false) {
             System.out.println("Nincs ilyen elem!");
         }
+        
+        System.out.print("7. feladat: ");
+        int max=0;
+        for (int i=10;i<elemek.size();i++) {
+            if((Integer.parseInt(elemek.get(i).getEv())-(Integer.parseInt(elemek.get(i-1).getEv())))>max){
+                max=Integer.parseInt(elemek.get(i).getEv())-(Integer.parseInt(elemek.get(i-1).getEv()));
+            }
+        }
+        System.out.println(max+" év volt a leghosszabb időszak 2 elem felfedezése között.");
 
     }
 
